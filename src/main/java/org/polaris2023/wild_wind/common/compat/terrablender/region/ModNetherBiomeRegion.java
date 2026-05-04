@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 import static org.polaris2023.wild_wind.WildWindMod.MOD_ID;
 
 public class ModNetherBiomeRegion extends Region {
-    public static final ResourceLocation LOCATION = ResourceLocation.fromNamespaceAndPath(MOD_ID, "nether_biome_provider");
+    public static final ResourceLocation LOCATION = new ResourceLocation(MOD_ID, "nether_biome_provider");
 
     public ModNetherBiomeRegion(int weight) {
         super(LOCATION, RegionType.NETHER, weight);

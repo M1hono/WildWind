@@ -23,7 +23,7 @@ public class CauldronEvent {
         BlockState blockstate = event.getLevel().getBlockState(event.getPos());
         if(blockstate.is(Blocks.WATER_CAULDRON)) {
             washingDyedItem(stack, blockstate, event, ItemTags.WOOL, ModBlocks.WOOL.get().asItem());
-            washingDyedItem(stack, blockstate, event, ItemTags.create(ResourceLocation.parse("c:glazed_terracottas")), ModBlocks.GLAZED_TERRACOTTA.get().asItem());
+            washingDyedItem(stack, blockstate, event, ItemTags.create(new ResourceLocation("c:glazed_terracottas")), ModBlocks.GLAZED_TERRACOTTA.get().asItem());
         }
     }
 

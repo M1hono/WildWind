@@ -15,7 +15,7 @@ import java.util.function.Consumer;
 import static org.polaris2023.wild_wind.WildWindMod.MOD_ID;
 
 public class ModOverworldBiomeRegion extends Region {
-    public static final ResourceLocation LOCATION = ResourceLocation.fromNamespaceAndPath(MOD_ID, "overworld_biome_provider");
+    public static final ResourceLocation LOCATION = new ResourceLocation(MOD_ID, "overworld_biome_provider");
 
     public ModOverworldBiomeRegion(int weight) {
         super(LOCATION, RegionType.OVERWORLD, weight);

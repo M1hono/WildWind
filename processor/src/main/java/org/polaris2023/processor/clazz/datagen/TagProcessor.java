@@ -102,7 +102,7 @@ public class TagProcessor extends ClassProcessor {
         for (String name : tagNames) {
             StringBuilder sb = new StringBuilder();
             sb
-                    .append("tag(net.minecraft.tags.%sTags.create(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(\"".formatted(type.name()))
+                    .append("tag(net.minecraft.tags.%sTags.create(new net.minecraft.resources.ResourceLocation(\"".formatted(type.name()))
                     .append(modid)
                     .append("\",\"")
                     .append(name)

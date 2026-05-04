@@ -22,7 +22,7 @@ public final class Helpers {
     public static final String ITEM_PLACEHOLDER = "wild_wind:template/item_placeholder";
 
     public static ResourceLocation location(String path) {
-        return ResourceLocation.fromNamespaceAndPath(WildWindMod.MOD_ID, path);
+        return new ResourceLocation(WildWindMod.MOD_ID, path);
     }
 
     public static ModelLayerLocation location(String path, String parent) {
@@ -34,7 +34,7 @@ public final class Helpers {
     }
 
     public static <T> TagKey<T> ctags(ResourceKey<Registry<T>> resourceKey, String name) {
-        return TagKey.create(resourceKey, ResourceLocation.fromNamespaceAndPath("c", name));
+        return TagKey.create(resourceKey, new ResourceLocation("c", name));
     }
 
     public static Collection<BlockState> assembleStates(Block block) {

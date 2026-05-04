@@ -17,7 +17,7 @@ import org.polaris2023.wild_wind.util.interfaces.datagen.DatagenClient;
 public interface IItemModel extends DatagenClient {
     default ItemModelBuilder basicBlockLocatedItem(ResourceLocation block) {
 
-        return self().itemModelProvider.getBuilder(block.toString()).parent(new ModelFile.UncheckedModelFile("item/generated")).texture("layer0", ResourceLocation.fromNamespaceAndPath(block.getNamespace(), "block/" + block.getPath()));
+        return self().itemModelProvider.getBuilder(block.toString()).parent(new ModelFile.UncheckedModelFile("item/generated")).texture("layer0", new ResourceLocation(block.getNamespace(), "block/" + block.getPath()));
     }
 
     default <T extends ItemLike> ItemModelBuilder basicBlockLocatedItem(T blockItem) {
@@ -34,6 +34,6 @@ public interface IItemModel extends DatagenClient {
 
     default <T extends ItemLike> ResourceLocation blockTexture(T item) {
         ResourceLocation name = key(item);
-        return ResourceLocation.fromNamespaceAndPath(name.getNamespace(), "item/" + name.getPath());
+        return new ResourceLocation(name.getNamespace(), "item/" + name.getPath());
     }
 }

@@ -148,13 +148,13 @@ public class ModelProcessor extends ClassProcessor {
             for (var override : overrides) {
                 sb.append(".override()");
                 for (Predicate predicate : override.predicate()) {
-                    sb.append(".predicate(ResourceLocation.parse(\"")
+                    sb.append(".predicate(new ResourceLocation(\"")
                             .append(predicate.name())
                             .append("\"), ")
                             .append(predicate.value())
                             .append(")");
                 }
-                sb.append(".model(itemModelProvider.getExistingFile(ResourceLocation.parse(")
+                sb.append(".model(itemModelProvider.getExistingFile(new ResourceLocation(")
                         .append(override.model())
                         .append("\")))");
                 sb.append(".end()");
@@ -253,7 +253,7 @@ public class ModelProcessor extends ClassProcessor {
     }
 
     private String location(ResourceLocation location) {
-        return "ResourceLocation.fromNamespaceAndPath(\"" + location.namespace() + "\", \"" + location.path() + "\")";
+        return "new ResourceLocation(\"" + location.namespace() + "\", \"" + location.path() + "\")";
     }
 
     private void addCodeBasicBlockLocatedItem(TypeElement typeElement, VariableElement variableElement) {

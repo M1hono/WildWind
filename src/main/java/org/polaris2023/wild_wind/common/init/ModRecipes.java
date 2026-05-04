@@ -14,6 +14,6 @@ public class ModRecipes {
 
 
     private static <T extends Recipe<?>> DeferredHolder<RecipeType<?>,RecipeType<T>> register(String name) {
-        return RECIPES.register(name, () -> RecipeType.simple(ResourceLocation.withDefaultNamespace(name)));
+        return RECIPES.register(name, () -> RecipeType.simple(new ResourceLocation("minecraft", name)));
     }
 }

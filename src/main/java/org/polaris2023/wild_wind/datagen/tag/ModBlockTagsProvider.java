@@ -40,7 +40,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
     public static TagKey<Block> create(String namespace, String tagName) {
 
-        return BlockTags.create(ResourceLocation.fromNamespaceAndPath(namespace, tagName));
+        return BlockTags.create(new ResourceLocation(namespace, tagName));
     }
 
     @SafeVarargs

@@ -96,7 +96,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 wool
                         .requires(DYE[finalI])
                         .requires(Ingredient.of(ingredientArray))
-                        .save(recipeOutput, ResourceLocation.withDefaultNamespace("dye_" + name.substring(name.indexOf(':') + 1)));
+                        .save(recipeOutput, new ResourceLocation("minecraft", "dye_" + name.substring(name.indexOf(':') + 1)));
             });
             add(shapeless(RecipeCategory.MISC, CONCRETE_BLOCK[i], 1, concrete -> {
                 unlockedBy(concrete, ModBlocks.CONCRETE, DYE[finalI]);

@@ -13,7 +13,7 @@ public class ModDamageType {
     public static final ResourceKey<DamageType> SILT_DAMAGE = create("silt_damage");
 
     public static ResourceKey<DamageType> create(String name) {
-        return ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(WildWindMod.MOD_ID, name));
+        return ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation(WildWindMod.MOD_ID, name));
     }
 
     public static DamageSource causeQuicksandDamage(LivingEntity living) {

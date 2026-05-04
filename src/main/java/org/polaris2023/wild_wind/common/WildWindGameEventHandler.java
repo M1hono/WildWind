@@ -232,7 +232,7 @@ public class WildWindGameEventHandler {
         }
     }
 
-    private static final ResourceLocation VANILLA_FISHERMAN = ResourceLocation.withDefaultNamespace("fisherman");
+    private static final ResourceLocation VANILLA_FISHERMAN = new ResourceLocation("minecraft", "fisherman");
     @SubscribeEvent
     public static void registerTrades(VillagerTradesEvent event) {
         Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
